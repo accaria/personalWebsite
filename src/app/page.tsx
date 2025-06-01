@@ -1,7 +1,9 @@
+"use client"
 import Image from "next/image";
 import HeroSection from "./hero-section/page";
 import AboutMeSection from "./aboutMe-section/page";
 import SkillsSection from "./skills-section/page";
+
 export default function Home() {
   return (
     <div>
@@ -9,5 +11,5 @@ export default function Home() {
     <AboutMeSection/>
     <SkillsSection/>
     </div>
-  );
+  )
 }
