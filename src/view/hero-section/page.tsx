@@ -27,7 +27,7 @@ export default function HeroPageView(){
         <div className=" border-pink-500 border-4 w-30 text-center hover:bg-pink-600 hover:text-white"><button onClick={()=>{setActiveContent('about');setActiveHeader('aboutHeader');}}>ABOUT</button></div>
         <div className=" border-pink-500 border-4 w-30 text-center hover:bg-pink-600 hover:text-white"><button onClick={()=>{setActiveContent('contact');setActiveHeader('contactHeader');}}>CONTACT</button></div>
         </div>
-        <div className="w-1/1 p-4 ml-4 bg-[#F5F5DC] border-pink-500 border-4">{contentList[activeContent]};
+        <div className="w-1/1 p-4 ml-4 bg-[#F5F5DC] border-pink-500 border-4">{contentList[activeContent]}
         </div>
         </div>
         </div>
