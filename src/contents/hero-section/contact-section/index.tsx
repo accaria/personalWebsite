@@ -16,8 +16,8 @@ const handleMessageSubmit = (e) => {
 
     return(
         <>
-        <h1 className="text-center font-bold text-3xl mb-5">Send A Message to Start A Wonderful Work Relationship!</h1>
-        <div className="flex flex-row w-full justify-between items-center">
+        <h1 className="text-center font-bold text-2xl lg:text-3xl mb-5">Send A Message to Start A Wonderful Work Relationship!</h1>
+        <div className="flex flex-col lg:flex-row w-full justify-between items-center">
         <div className="flex flex-col">
         <p className=" font-medium ">YOUR NAME</p>
         <input 
@@ -36,25 +36,31 @@ const handleMessageSubmit = (e) => {
         placeholder="Enter Your Email"
         className="border-b-2 border-black" />
         </div>
-        </div>
-        <div className="mt-6 w-full">
-        <p >YOUR MESSAGE</p>
+        <div className="lg:hidden">
+        <p  className="font-medium">YOUR MESSAGE</p>
         <input 
         type="text"
         value={setMessage}
         onChange={handleMessageSubmit}
         placeholder="Enter Your Message"
-        className="border-b-2 border-black w-full"/>
+        className="border-b-2 border-black lg:w-full"/>
+        </div>
+        </div>
+        <div className="hidden lg:block lg:mt-6 lg:w-full">
+        <p  className="font-medium">YOUR MESSAGE</p>
+        <input 
+        type="text"
+        value={setMessage}
+        onChange={handleMessageSubmit}
+        placeholder="Enter Your Message"
+        className="border-b-2 border-black lg:w-full"/>
         </div>
         <div className="flex flex-col justify-center items-center mt-5">
         <div>
         <button>SUBMIT MESSAGE</button>
         </div>
         <div>
-            <h1>Message Submitted, Thank You!</h1>
-            <h2>Name:{setName}</h2>
-            <h2>Email:{setEmail}</h2>
-            <h2>Message:{setMessage}</h2>
+        <h1>Message Submitted, Thank You!</h1>
         </div>
         </div>
         </>

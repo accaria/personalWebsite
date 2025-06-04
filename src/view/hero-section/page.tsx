@@ -17,18 +17,24 @@ export default function HeroPageView(){
         contactHeader: <p>CONTACT ME</p>,
     };
     return (
-        <div className="w-7/8 h-7/8 mx-auto mt-5">
+        <div className="w-11/12 md:w-4/5 lg:w-7/8 lg:h-7/8 mx-auto mt-5">
         <div className="flex flex-col items-center justify-center p-8">
-        <div className="flex flex-col font-bold text-4xl items-center justify-center">{headerList[activeHeader]}</div>
-
-        <div className="flex p-4 w-7/8 ">
-        <div className="flex flex-col gap-20 items-center justify-center ">
+        {/*Header*/}
+        <div className="flex flex-col font-bold text-3xl lg:text-4xl items-center justify-center ml-5 lg:ml-0">{headerList[activeHeader]}</div>
+        {/*NavBar*/}
+        <div className="flex lg:p-4 lg:w-7/8 w-full">
+        <div className="hidden lg:flex flex-col gap-10 lg:gap-20 items-center justify-center ">
         <div className=" border-pink-500 border-4 w-30 text-center hover:bg-pink-600 hover:text-white"><button onClick={()=>{setActiveContent('intro');setActiveHeader('introHeader');}}>INTRO</button></div>
         <div className=" border-pink-500 border-4 w-30 text-center hover:bg-pink-600 hover:text-white"><button onClick={()=>{setActiveContent('about');setActiveHeader('aboutHeader');}}>ABOUT</button></div>
         <div className=" border-pink-500 border-4 w-30 text-center hover:bg-pink-600 hover:text-white"><button onClick={()=>{setActiveContent('contact');setActiveHeader('contactHeader');}}>CONTACT</button></div>
         </div>
-        <div className="w-1/1 p-4 ml-4 bg-[#F5F5DC] border-pink-500 border-4">{contentList[activeContent]}
+        <div className="w-1/1 lg:w-full p-4 ml-4 bg-[#F5F5DC] border-pink-500 border-4">{contentList[activeContent]}</div>
         </div>
+        {/*NavBar for SM*/}
+        <div className="flex flex-row w-full gap-3 ml-6 mt-4 items-center justify-center lg:hidden">
+        <div className="text-sm font-bold border-pink-500 border-4 w-20 text-center hover:bg-pink-600 hover:text-white"><button onClick={()=>{setActiveContent('intro');setActiveHeader('introHeader');}}>INTRO</button></div>
+        <div className="text-sm font-bold border-pink-500 border-4 w-20 text-center hover:bg-pink-600 hover:text-white"><button onClick={()=>{setActiveContent('about');setActiveHeader('aboutHeader');}}>ABOUT</button></div>
+        <div className="text-sm font-bold border-pink-500 border-4 w-20 text-center hover:bg-pink-600 hover:text-white"><button onClick={()=>{setActiveContent('contact');setActiveHeader('contactHeader');}}>CONTACT</button></div>
         </div>
         </div>
         </div>
