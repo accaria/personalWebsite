@@ -57,7 +57,7 @@ const handleMessageSubmit = (e) => {
         </div>
         <div className="flex flex-col justify-center items-center mt-5">
         <div>
-        <button>SUBMIT MESSAGE</button>
+        <button className=" border-pink-500 border-4 w-40 text-center hover:bg-pink-600 hover:text-white">SUBMIT MESSAGE</button>
         </div>
         <div>
         <h1>Message Submitted, Thank You!</h1>
