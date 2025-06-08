@@ -1,9 +1,11 @@
 "use client"
-import { useState } from "react"
+import { useState,useEffect } from "react"
+
 export default function ContactSection(){
 const [setName,getName]=useState("");
 const [setEmail,getEmail]=useState("");
 const [setMessage,getMessage]=useState("");
+const [setSubmit,updateSubmit]=useState(false);
 const handleNameSubmit = (e) => {
     getName(e.target.value);
 };
@@ -13,6 +15,14 @@ const handleEmailSubmit = (e) => {
 const handleMessageSubmit = (e) => {
     getMessage(e.target.value);
 };
+
+useEffect(()=>{
+    if (setSubmit){
+        getName(""),
+        getEmail(""),
+        getMessage("");
+    }
+},[setSubmit]);
 
     return(
         <>
@@ -57,11 +67,13 @@ const handleMessageSubmit = (e) => {
         </div>
         <div className="flex flex-col justify-center items-center mt-5">
         <div>
-        <button className=" border-pink-500 border-4 w-40 text-center hover:bg-pink-600 hover:text-white">SUBMIT MESSAGE</button>
+        <button onClick={()=>updateSubmit(true)} className=" border-pink-500 border-4 w-40 text-center hover:bg-pink-600 hover:text-white">SUBMIT MESSAGE</button>
         </div>
-        <div>
+        {setSubmit &&(
+        <div className="">
         <h1>Message Submitted, Thank You!</h1>
         </div>
+        )}
         </div>
         </>
     )

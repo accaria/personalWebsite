@@ -3,6 +3,7 @@ import { useState } from "react"
 import IntroSection from "@/contents/hero-section/intro-section";
 import AboutSection from "@/contents/hero-section/about-section";
 import ContactSection from "@/contents/hero-section/contact-section";
+
 export default function HeroPageView(){
     const [activeContent,setActiveContent] = useState('intro');
     const contentList={
