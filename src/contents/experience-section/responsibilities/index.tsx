@@ -2,14 +2,17 @@
 import { useState } from "react";
 import Marketing from "./marketing";
 import NetworkEngineer from "./networkEngineer";
+
+type ContentKey = 'M' | 'ME';
+type HeaderKey = 'MH' | 'NEH';
 export default function ResponSection(){
-    const [activeContent,setActiveContent] = useState('M');
-    const contentList={
+    const [activeContent,setActiveContent] = useState<ContentKey>('M');
+    const contentList:Record<ContentKey, React.ReactNode>={
         M:<Marketing/>,
         NE:<NetworkEngineer/>
     };
-    const [activeHeader,setActiveHeader]= useState('MH');
-    const headerList={
+    const [activeHeader,setActiveHeader]= useState<HeaderKey>('MH');
+    const headerList: Record<HeaderKey, React.ReactNode>={
         MH: <p className="text-2xl text-center">MARKETING RESPONSIBILITIES</p>,
         NEH: <p className="text-2xl text-center">NETWORK ENGINEER RESPONSIBILITIES</p>,
     };
