@@ -13,7 +13,6 @@ import BottomPageView from "@/view/navbar/bottompage/page";
 export default function Home() {
   return (
     <div>
-    
     <HeroSection/>
     <AboutMeSection/>
     <SkillsSection/>
