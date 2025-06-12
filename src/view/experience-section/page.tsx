@@ -4,15 +4,17 @@ import JobTitlesSection from "@/contents/experience-section/jobTitlesCompanies";
 import ResponsibilitesSection from "@/contents/experience-section/responsibilities";
 import TimelineSection from "@/contents/experience-section/timeline";
 
+type ContentKey = 'jobTitle' | 'respon' | 'time';
+type HeaderKey = 'jobHeader' | 'responHeader' | 'timeHeader';
 export default function ExperiencePageView(){
-    const [activeContent,setActiveContent] = useState('jobTitle');
-    const contentList={
+    const [activeContent,setActiveContent] = useState<ContentKey>('jobTitle');
+    const contentList: Record<ContentKey, React.ReactNode>={
         jobTitle:<JobTitlesSection/>,
         respon:<ResponsibilitesSection/>,
         time:<TimelineSection/>
     };
-    const [activeHeader,setActiveHeader] = useState('jobHeader');
-    const headerList={
+    const [activeHeader,setActiveHeader] = useState<HeaderKey>('jobHeader');
+    const headerList: Record<HeaderKey, React.ReactNode>={
         jobHeader: <p>JOB AND TITLES</p>,
         responHeader: <p>RESPONSIBILITES</p>,
         timeHeader: <p>TIMELINE</p>,

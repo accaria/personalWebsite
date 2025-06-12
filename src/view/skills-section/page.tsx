@@ -3,15 +3,18 @@ import { useState } from "react";
 import BackEndSection from "@/contents/skills-section/backEnd-skills";
 import DevOpsSection from "@/contents/skills-section/devOps-skills";
 import FrontEndSection from "@/contents/skills-section/frontEnd-skills";
+
+type ContentKey = 'front' | 'back' | 'devOp';
+type HeaderKey = 'frontHeader' | 'backHeader' | 'devOpHeader';
 export default function SkillsPageView(){
-    const [activeContent,setActiveContent] = useState('front');
-    const contentList={
+    const [activeContent,setActiveContent] = useState<ContentKey>('front');
+    const contentList: Record<ContentKey, React.ReactNode>={
         front: <FrontEndSection/>,
         back:<BackEndSection/>,
         devOp:<DevOpsSection/>,
     };
-    const [activeHeader,setActiveHeader] = useState('bioHeader');
-    const headerList={
+    const [activeHeader,setActiveHeader] = useState<HeaderKey>('frontHeader');
+    const headerList: Record<HeaderKey, React.ReactNode>={
         frontHeader: <p>FRONT-END</p>,
         backHeader: <p>BACK-END</p>,
         devOpHeader: <p>DEV-OPS</p>,

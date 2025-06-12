@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 
-export function useSlidingImages(images,interval = 3000){
+export function useSlidingImages(images: string[], interval: number = 3000): number {
 const [currentImg, setCurrentImg] = useState(0);
         useEffect(()=>{
             const timer = setInterval(()=>{
@@ -11,7 +11,7 @@ const [currentImg, setCurrentImg] = useState(0);
         return currentImg;
 }
 
-export function useSlidingNames(names, interval=3000){
+export function useSlidingNames(names: string[], interval: number = 3000): number {
     const [currentName, setCurrentName] = useState(0);
     useEffect(()=>{
         const timer = setInterval(()=>{

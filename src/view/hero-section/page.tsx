@@ -4,15 +4,17 @@ import IntroSection from "@/contents/hero-section/intro-section";
 import AboutSection from "@/contents/hero-section/about-section";
 import ContactSection from "@/contents/hero-section/contact-section";
 
+type ContentKey = 'intro' | 'about' | 'contact';
+type HeaderKey = 'introHeader' | 'aboutHeader' | 'contactHeader';
 export default function HeroPageView(){
-    const [activeContent,setActiveContent] = useState('intro');
-    const contentList={
+    const [activeContent,setActiveContent] = useState<ContentKey>('intro');
+    const contentList: Record<ContentKey, React.ReactNode>={
         intro: <IntroSection/>,
         about: <AboutSection/>,
         contact: <ContactSection/>,
     };
-    const [activeHeader,setActiveHeader] = useState('introHeader');
-    const headerList={
+    const [activeHeader,setActiveHeader] = useState<HeaderKey>('introHeader');
+    const headerList: Record<HeaderKey, React.ReactNode>={
         introHeader: <p>INTRODUCTION</p>,
         aboutHeader: <p>ABOUT ME</p>,
         contactHeader: <p>CONTACT ME</p>,

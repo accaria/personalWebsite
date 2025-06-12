@@ -4,15 +4,18 @@ import KeyValuesSection from "@/contents/aboutMe-section/keyValues-section";
 import BriefBioSection from "@/contents/aboutMe-section/briefBio-section";
 import CoreSkillsSection from "@/contents/aboutMe-section/coreSkills-section";
 
+type ContentKey = 'bio' | 'key' | 'core';
+type HeaderKey = 'bioHeader' | 'keyHeader' | 'coreHeader';
+
 export default function AboutMePageView(){
-    const [activeContent,setActiveContent] = useState('bio');
-    const contentList={
+    const [activeContent,setActiveContent] = useState<ContentKey>('bio');
+    const contentList: Record<ContentKey, React.ReactNode>={
         bio: <BriefBioSection/>,
         key:<KeyValuesSection/>,
         core:<CoreSkillsSection/>
     };
-    const [activeHeader,setActiveHeader] = useState('bioHeader');
-    const headerList={
+    const [activeHeader,setActiveHeader] = useState<HeaderKey>('bioHeader');
+    const headerList: Record<HeaderKey, React.ReactNode>={
         bioHeader: <p>BRIEF BIO</p>,
         keyHeader: <p>KEY VALUES</p>,
         coreHeader: <p>CORE SKILLS</p>,

@@ -5,14 +5,16 @@ import Project2Result from "./result"
 import Project2Situation from "./situation"
 import Project2Task from "./task"
 import Link from "next/link";
+
+type SectionKey = 'situation' | 'task' | 'action' | 'result';
 export default function Project2(){
-    const [visibleSection,setVisibleSection] = useState({
+    const [visibleSection,setVisibleSection] = useState<Record<SectionKey, boolean>>({
         situation:false,
         task:false,
         action:false,
         result:false,
     });
-    const toggleInvi=(key)=>{
+    const toggleInvi=(key: SectionKey)=>{
         setVisibleSection((prev)=>({
             ...prev,
             [key]:!prev[key],
