@@ -6,13 +6,13 @@ const [setName,getName]=useState("");
 const [setEmail,getEmail]=useState("");
 const [setMessage,getMessage]=useState("");
 const [setSubmit,updateSubmit]=useState(false);
-const handleNameSubmit = (e) => {
+const handleNameSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
     getName(e.target.value);
 };
-const handleEmailSubmit = (e) => {
+const handleEmailSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
     getEmail(e.target.value);
 };
-const handleMessageSubmit = (e) => {
+const handleMessageSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
     getMessage(e.target.value);
 };
 
