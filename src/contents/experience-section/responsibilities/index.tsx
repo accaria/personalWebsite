@@ -3,7 +3,7 @@ import { useState } from "react";
 import Marketing from "./marketing";
 import NetworkEngineer from "./networkEngineer";
 
-type ContentKey = 'M' | 'ME';
+type ContentKey = 'M' | 'NE';
 type HeaderKey = 'MH' | 'NEH';
 export default function ResponSection(){
     const [activeContent,setActiveContent] = useState<ContentKey>('M');
